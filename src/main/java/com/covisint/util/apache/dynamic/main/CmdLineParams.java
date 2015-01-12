@@ -108,7 +108,7 @@ public final class CmdLineParams {
 	
 	@Override
 	public String toString() {
-	    return _CMD_LINE_PARAMS.toString();
+	    return cmdLineParams.toString();
 	}
 	
 }
