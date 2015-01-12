@@ -1,6 +1,6 @@
 # Covisint CTrust Agent Config Generator
 
-### _ This code base is a stop gap solution for long term solution to be put in place using Cloud Foundry Build packs. This code base is not targetted for longtime maintainence._
+### This code base is a stop gap solution for long term solution to be put in place using Cloud Foundry Build packs. This code base is not targetted for longtime maintainence.
 
 ## Description
 Generates CTrust Agent Configuration dynamically by calling a Covisint Microservice that returns latest configurations in JSON Format. The program needs to be run in a batch mode and can be scheduled on individual servers to run periodically.
@@ -52,3 +52,8 @@ Generates CTrust Agent Configuration dynamically by calling a Covisint Microserv
 
 9. **logback.configurationFile** 
    The logback config file. 
+   
+## Example Invocation from generated FAT-JAR file
+```
+java -DWEB_AGENT_CONF_LOCATION=/tmp -DCONFIGURATION_SERVICE_URL=http://director.something.com/instances -DDEFAULT_REALM=CEXP -DCTRUST_SERVER=ctrust.something.com -DSERVER_TYPE=PROVISIONER -DENABLE_CTRUST_AGENT=true -DRESULTS_FILE=/tmp/resultsfile -DCACHE_FILE_LOCATION=/tmp/webagent_serialize_file -Dlogback.configurationFile=/tmp/logback.xml -jar /tmp/dyno-apche-1.0.jar
+```
