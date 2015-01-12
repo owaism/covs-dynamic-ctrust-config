@@ -1,0 +1,60 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'eu.appsatori:gradle-fatjar-plugin:0.3'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'eu.appsatori.fatjar'
+
+sourceCompatibility = 1.7
+version = '1.0'
+fatJar {
+    manifest {
+        attributes 'Implementation-Title': 'Covs-Dynamic-Apache', 'Implementation-Version': version, 'Main-Class': 'com.covisint.util.apache.dynamic.main.DynamicApache'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.google.guava:guava:18.0'
+    
+    //Jersey for making restful calls
+    compile 'org.glassfish.jersey.core:jersey-client:2.14'
+    compile 'org.glassfish.jersey.media:jersey-media-json-jackson:2.14'
+    
+    //mustache implementation
+    compile 'com.samskivert:jmustache:1.9'
+    
+    // Logging Dependencies
+    compile "org.slf4j:slf4j-api:1.7.10"
+    runtime "ch.qos.logback:logback-classic:1.1.2"
+    
+    //test compilation
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+    testCompile "org.mockito:mockito-core:1.+"
+}
+
+test {
+	scanForTestClasses = false
+	exclude '**/*Test.*'
+	include '**/*Suite.*' 
+	
+    systemProperties 'DEFAULT_REALM':'CEXP', 'WEB_AGENT_CONF_LOCATION':'/tmp', 'CONFIGURATION_SERVICE_URL': 'http://director.cf.45covisintrnd.com/instances', 'CTRUST_SERVER': 'ct1.covisintrnd.com', 'SERVER_TYPE':'PROVISIONER','ENABLE_CTRUST_AGENT':'false', 'RESULTS_FILE':'/tmp/results', 'logback.configurationFile':'/tmp/logback.xml', 'CACHE_FILE_LOCATION':'/tmp/serialized_file'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}

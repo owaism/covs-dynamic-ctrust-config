@@ -1,0 +1,47 @@
+<VirtualHost name={{webagentHostname}} address=* port=*>
+	cleartrust.agent.log_file=/a01/logs/ctrust/webagent-{{realmInfo.realmId}}.log
+	cleartrust.agent.idle_timeout={{realmInfo.attributeMap.cleartrust-agent-idle_timeout}}
+
+	cleartrust.agent.realm={{realmInfo.realmId}}
+
+	cleartrust.agent.cookie_domain={{realmInfo.realm.attributeMap.cleartrust-agent-cookie_domain}}
+
+	# url properties
+	cleartrust.agent.login_home_location=https://login.{{realmInfo.domain}}/jsp/home.jsp
+	cleartrust.agent.login_form_location_iwa=https://login.{{realmInfo.domain}}/jsp/home.jsp
+	cleartrust.agent.logout_form_location=https://login.{{realmInfo.domain}}/jsp/logout.jsp
+	cleartrust.agent.login_form_location_basic=https://login.{{realmInfo.domain}}/jsp/preLogin.jsp
+	cleartrust.agent.login_error_user_location_basic=https://login.{{realmInfo.domain}}/jsp/preLogin.jsp?error=yes
+	cleartrust.agent.login_error_pw_location_basic=https://login.{{realmInfo.domain}}/jsp/preLogin.jsp?error=yes
+	cleartrust.agent.login_form_location_securid=https://login.{{realmInfo.domain}}/jsp/preLogin.jsp
+	cleartrust.agent.login_form_location_sid_nexttoken=https://login.{{realmInfo.domain}}/jsp/preLogin.jsp
+	cleartrust.agent.login_form_location_sid_newpin=https://login.{{realmInfo.domain}}/jsp/preLogin.jsp
+	cleartrust.agent.login_form_location_sid_passcode=https://login.{{realmInfo.domain}}/jsp/preLogin.jsp
+	cleartrust.agent.login_form_location_securid=https://login.{{realmInfo.domain}}/jsp/preLogin.jsp?error=yes
+	cleartrust.agent.login_form_location_nt=https://login.{{realmInfo.domain}}/jsp/preLogin.jsp
+	cleartrust.agent.login_error_user_location_nt=https://login.{{realmInfo.domain}}/jsp/preLogin.jsp?error=yes
+	cleartrust.agent.login_error_pw_location_nt=https://login.{{realmInfo.domain}}/jsp/preLogin.jsp?error=yes
+	cleartrust.agent.login_form_location_mobile=
+	cleartrust.agent.login_error_password_expired=http://login.{{realmInfo.domain}}/jsp/changePassword.jsp
+	cleartrust.agent.login_error_password_expired_forced=http://login.{{realmInfo.domain}}/jsp/changePassword.jsp
+	cleartrust.agent.login_error_password_expired_new_user=http://login.{{realmInfo.domain}}/jsp/changePassword.jsp
+	cleartrust.agent.login_form_location_custom=https://login.{{realmInfo.domain}}/jsp/preLogin.jsp
+	cleartrust.agent.login_error_user_location_custom=https://login.{{realmInfo.domain}}/jsp/preLogin.jsp?error=yes
+	cleartrust.agent.login_error_pw_location_custom=https://login.{{realmInfo.domain}}/jsp/preLogin.jsp?error=yes
+	cleartrust.agent.login_cert_invalid_user=https://login.{{realmInfo.domain}}/jsp/preLogin.jsp?error=yes
+	cleartrust.agent.login_auth_inactive_account=https://login.{{realmInfo.domain}}/jsp/preLogin.jsp?error=yes
+	cleartrust.agent.login_auth_expired_account=https://login.{{realmInfo.domain}}/jsp/preLogin.jsp?error=yes
+	cleartrust.agent.login_auth_user_locked_out=https://login.{{realmInfo.domain}}/jsp/passwordLockout.jsp
+	cleartrust.agent.login_auth_url_access_denied=https://login.{{realmInfo.domain}}/jsp/accessDenied.jsp
+	cleartrust.agent.login_server_error=https://login.{{realmInfo.domain}}/jsp/ctServerError.jsp
+	
+	
+	cleartrust.agent.web_server_name={{webagentHostServerNamePrefix}}_{{realmInfo.realmId}}
+	cleartrust.agent.cookie_name={{realmInfo.realm.attributeMap.cleartrust-agent-cookie_name}}
+	cleartrust.agent.cookie_domain={{realmInfo.realm.attributeMap.cleartrust-agent-cookie_domain}}
+	
+	cleartrust.agent.login_form_location_basic=https://login.{{realmInfo.domain}}/login.do?host={{webagentHostname}}
+	
+	cleartrust.agent.enabled={{ctrustAgentEnabled}}
+	
+</VirtualHost>
