@@ -88,7 +88,7 @@
 	cleartrust.agent.log_file=/a01/logs/ctrust/webagent-{{defaultRealmInfo.realmId}}.log
 	cleartrust.agent.idle_timeout={{defaultRealmInfo.attributeMap.cleartrust-agent-idle_timeout}}
 
-	cleartrust.agent.realm=SCReealm
+	cleartrust.agent.realm=SCRealm
 
 	cleartrust.agent.cookie_domain={{defaultRealmInfo.realm.attributeMap.cleartrust-agent-cookie_domain}}
 
@@ -122,11 +122,11 @@
 	cleartrust.agent.login_server_error=https://login.{{defaultRealmInfo.domain}}/jsp/ctServerError.jsp
 	
 	
-	cleartrust.agent.web_server_name={{webagentHostServerNamePrefix}}_{{defaultRealmInfo.realmId}}
+	cleartrust.agent.web_server_name=sso
 	cleartrust.agent.cookie_name={{defaultRealmInfo.realm.attributeMap.cleartrust-agent-cookie_name}}
 	cleartrust.agent.cookie_domain={{defaultRealmInfo.realm.attributeMap.cleartrust-agent-cookie_domain}}
 	
-	cleartrust.agent.login_form_location_basic=https://login.{{defaultRealmInfo.domain}}/login.do?host={{webagentHostname}}
+	cleartrust.agent.login_form_location_basic=https://login.{{defaultRealmInfo.domain}}/login.do?host=https://{{webagentHostname}}
 
 	################################################################################################################
 	# Default Realm Information End
