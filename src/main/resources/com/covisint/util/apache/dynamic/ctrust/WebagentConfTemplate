@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <Global>
 	cleartrust.agent.log_level=DEBUG
 	cleartrust.agent.log_flags=00
@@ -89,7 +88,7 @@
 	cleartrust.agent.log_file=/a01/logs/ctrust/webagent-{{defaultRealmInfo.realmId}}.log
 	cleartrust.agent.idle_timeout={{defaultRealmInfo.attributeMap.cleartrust-agent-idle_timeout}}
 
-	cleartrust.agent.realm={{defaultRealmInfo.realmId}}
+	cleartrust.agent.realm=SCReealm
 
 	cleartrust.agent.cookie_domain={{defaultRealmInfo.realm.attributeMap.cleartrust-agent-cookie_domain}}
 

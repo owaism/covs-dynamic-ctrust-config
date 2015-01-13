@@ -4,8 +4,6 @@
 
 	cleartrust.agent.realm={{realmInfo.realmId}}
 
-	cleartrust.agent.cookie_domain={{realmInfo.realm.attributeMap.cleartrust-agent-cookie_domain}}
-
 	# url properties
 	cleartrust.agent.login_home_location=https://login.{{realmInfo.domain}}/jsp/home.jsp
 	cleartrust.agent.login_form_location_iwa=https://login.{{realmInfo.domain}}/jsp/home.jsp
@@ -36,7 +34,7 @@
 	cleartrust.agent.login_server_error=https://login.{{realmInfo.domain}}/jsp/ctServerError.jsp
 	
 	
-	cleartrust.agent.web_server_name={{webagentHostServerNamePrefix}}_{{realmInfo.realmId}}
+	cleartrust.agent.web_server_name={{webserverName}}
 	cleartrust.agent.cookie_name={{realmInfo.realm.attributeMap.cleartrust-agent-cookie_name}}
 	cleartrust.agent.cookie_domain={{realmInfo.realm.attributeMap.cleartrust-agent-cookie_domain}}
 	
