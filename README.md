@@ -57,3 +57,11 @@ Generates CTrust Agent Configuration dynamically by calling a Covisint Microserv
 ```
 java -DWEB_AGENT_CONF_LOCATION=/tmp -DCONFIGURATION_SERVICE_URL=http://director.something.com/instances -DDEFAULT_REALM=CEXP -DCTRUST_SERVER=ctrust.something.com -DSERVER_TYPE=PROVISIONER -DENABLE_CTRUST_AGENT=true -DRESULTS_FILE=/tmp/resultsfile -DCACHE_FILE_LOCATION=/tmp/webagent_serialize_file -Dlogback.configurationFile=/tmp/logback.xml -jar /tmp/dyno-apche-1.0.jar
 ```
+
+## Shell Script
+The script is `dyno.sh` present in the `scripts` folder. The script calls the Java Program and gracefully restarts apache once the program has completed successfully.
+
+## CRONTAB Entry
+```
+*/1 * * * * /usr/lib/dyno/dyno.sh >/dev/null
+```
