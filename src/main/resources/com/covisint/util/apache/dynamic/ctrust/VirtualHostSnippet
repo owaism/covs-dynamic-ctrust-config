@@ -38,7 +38,7 @@
 	cleartrust.agent.cookie_name={{realmInfo.realm.attributeMap.cleartrust-agent-cookie_name}}
 	cleartrust.agent.cookie_domain={{realmInfo.realm.attributeMap.cleartrust-agent-cookie_domain}}
 	
-	cleartrust.agent.login_form_location_basic=https://login.{{realmInfo.domain}}/login.do?host={{webagentHostname}}
+	cleartrust.agent.login_form_location_basic=https://login.{{realmInfo.domain}}/login.do?host=https://{{webagentHostname}}
 	
 	cleartrust.agent.enabled={{ctrustAgentEnabled}}
 	
